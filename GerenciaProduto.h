@@ -1,20 +1,19 @@
-#ifndef PRODUTO_H
-#define PRODUTO_H
-
 
 typedef struct produto Produto;
+typedef struct lista_desejos listaDesejos;
+
 
 Produto* criarProduto(const char* nome, const char* categoria, int codigo, float preco);
-void aplicarDesconto(Produto* ptr_p, float percentual);
-void liberar_produto(Produto* p);
-void imprimir_produto(const Produto* p);
+float aplicarDesconto(Produto* ptr_p, float percentual);
+void imprimirProduto(const Produto* ptr_p);
+int listaDes(listaDesejos* ptr_l,Produto* ptr_p);
+
 int getCodigo(const Produto* ptr_p);
 const char* getNome( const Produto* ptr_p);
 const char* getCategoria(const Produto* ptr_p);
 float getPreco( const Produto * ptr_p);
-int get_quantidade(const Produto* p);
+int getQuantidade(const Produto* ptr_p);
 
-void set_quantidade(Produto* p, int novaQtd);
-void set_preco(Produto* p, float novoPreco);
-
-#endif 
+void setQuantidade(Produto* p, int novaQtd);
+void setPreco(Produto* p, float novoPreco);
+ 

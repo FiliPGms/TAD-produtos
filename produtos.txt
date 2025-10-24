@@ -1,0 +1,20 @@
+Arroz,Cereais,50,5.49
+Feijão,Cereais,40,6.29
+Açúcar,Mercearia,60,4.99
+Café,Bebidas,30,12.90
+Leite,Bebidas,45,4.79
+Óleo de Soja,Mercearia,35,7.50
+Macarrão,Massas,70,3.99
+Molho de Tomate,Massas,55,2.89
+Sal,Mercearia,80,2.49
+Farinha de Trigo,Panificação,50,5.99
+Pão Francês,Padaria,100,0.89
+Biscoito Recheado,Confeitaria,60,3.49
+Refrigerante,Bebidas,40,8.99
+Suco de Laranja,Bebidas,25,6.99
+Sabão em Pó,Limpeza,30,14.90
+Detergente,Limpeza,50,2.79
+Amaciante,Limpeza,25,8.49
+Desinfetante,Limpeza,20,6.99
+Papel Higiênico,Higiene,40,12.99
+Creme Dental,Higiene,35,3.79
