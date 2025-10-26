@@ -14,12 +14,31 @@ struct produto {
 
 struct lista_desejos
 {
-    listaDesejos** lista;
+    Produto** produtos;
+    int tamanho;
+    int cap;
     
 };
 
+ListaDesejos* inicializaLista(ListaDesejos* ptr_ld, int capacidade){
+    ptr_ld->produtos = malloc(ptr_ld->cap * sizeof(Produto));
+    ptr_ld->tamanho = 0;
+    ptr_ld->cap = capacidade;
 
-Produto* criarProduto(int codigo, const char* nome, const char* categoria, int quantidade, float preco) {
+}
+
+void adicionar_produto_lista(ListaDesejos* ptr_ld, Produto* ptr_p) {
+    if (ptr_ld->tamanho == ptr_ld->cap) {
+        ptr_ld->cap *= 2;
+        ptr_ld->produtos = realloc(ptr_ld->produtos, ptr_ld->cap * sizeof(Produto*));
+    }
+
+    ptr_ld->produtos[ptr_ld->tamanho] = ptr_p;
+    ptr_ld->tamanho++;
+}
+
+
+Produto* criarProduto(const char* nome, const char* categoria, int codigo, float preco, int quantidade) {
     Produto* ptr_p = malloc(sizeof(Produto));
     if (ptr_p != NULL) {
         ptr_p->codigo = codigo;
@@ -37,13 +56,6 @@ float aplicarDesconto(Produto* ptr_p, float percentual){
     ptr_p->preco-=ptr_p->preco*percentual;
     return ptr_p->preco;
 }
-
-int listaDes(listaDesejos* ptr_l,Produto* ptr_p){
-    
-
-}
-
-
 
 void imprimirProduto(const Produto* ptr_p) {
     if (ptr_p != NULL) {
