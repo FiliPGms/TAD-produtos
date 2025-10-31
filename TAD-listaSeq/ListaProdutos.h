@@ -1,6 +1,6 @@
 #ifndef LISTA_PRODUTOS_H
 #define LISTA_PRODUTOS_H
-#include "GerenciaProduto.h"
+#include "TAD-produtos/GerenciaProduto.h"
 
 typedef struct lista_produtos ListaProdutos;
 

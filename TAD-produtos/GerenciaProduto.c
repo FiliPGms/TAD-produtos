@@ -3,7 +3,6 @@
 #include <string.h>
 #include "GerenciaProduto.h"
 
-
 struct produto {
     int codigo;
     char nome[50];
@@ -11,31 +10,6 @@ struct produto {
     int quantidade;
     float preco;
 };
-
-struct lista_desejos
-{
-    Produto** produtos;
-    int tamanho;
-    int cap;
-    
-};
-
-ListaDesejos* inicializaLista(ListaDesejos* ptr_ld, int capacidade){
-    ptr_ld->produtos = malloc(ptr_ld->cap * sizeof(Produto));
-    ptr_ld->tamanho = 0;
-    ptr_ld->cap = capacidade;
-
-}
-
-void adicionar_produto_lista(ListaDesejos* ptr_ld, Produto* ptr_p) {
-    if (ptr_ld->tamanho == ptr_ld->cap) {
-        ptr_ld->cap *= 2;
-        ptr_ld->produtos = realloc(ptr_ld->produtos, ptr_ld->cap * sizeof(Produto*));
-    }
-
-    ptr_ld->produtos[ptr_ld->tamanho] = ptr_p;
-    ptr_ld->tamanho++;
-}
 
 
 Produto* criarProduto(const char* nome, const char* categoria, int codigo, float preco, int quantidade) {
