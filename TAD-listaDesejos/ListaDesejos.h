@@ -1,6 +1,6 @@
 #ifndef LISTA_DESEJOS_H
 #define LISTA_DESEJOS_H
-#include "TAD-GerenciaProd/GerenciaProduto.h"
+#include "../TAD-GerenciaProd/GerenciaProduto.h"
 
 typedef struct lista_desejos ListaDesejos;
 

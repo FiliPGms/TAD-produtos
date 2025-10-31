@@ -40,6 +40,14 @@ void liberarListaDesejos(ListaDesejos* ptr_ld) {
     free(ptr_ld);
 }
 
+int inserir(ListaDesejos* ptr_lista, Produto* ptr_p){
+    if(cheia(ptr_lista)){
+        return 0;
+    }
+    ptr_lista->produtos[ptr_lista->tama++] = ptr_p;
+    return 1;
+}
+
 void imprimir(const ListaDesejos* ptr_ld){
     if (!ptr_ld || ptr_ld->tamanho == 0) {
         printf("Lista de desejos vazia.\n");

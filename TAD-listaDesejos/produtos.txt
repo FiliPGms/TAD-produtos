@@ -1,0 +1,3 @@
+Macarrao Cereais 1 3.20 50
+Feijao Cereais 2 6.29 40
+Queijo Frios 3 10.90 60

@@ -1,0 +1,7 @@
+Arroz Cereais 1 5.49 50
+Feijao Cereais 2 6.29 40
+Acucar Mercearia 3 4.99 60
+Detergente, Limpeza, 10, 2.50, 100
+Pao de Forma, Padaria, 20, 7.00, 50
+Leite, Laticinios, 30, 4.50, 80
+Ovos, Laticinios, 40, 15.00, 30

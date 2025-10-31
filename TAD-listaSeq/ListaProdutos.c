@@ -46,11 +46,13 @@ int tamanho(ListaProdutos* ptr_lista){
     if(ptr_lista != NULL){
         return ptr_lista->quantidade;
     }
+    return 0;
 }
 int capacidade(ListaProdutos* ptr_lista){
     if(ptr_lista != NULL){
         return ptr_lista->cap;
     }
+        return 0;
 }
 
 
@@ -70,7 +72,7 @@ void imprimir(ListaProdutos* ptr_lista){
     printf("Lista de Produtos:\n");
     for (int i = 0; i < ptr_lista->quantidade; i++) {
         Produto *ptr_p = (*ptr_lista).prods[i];
-        printf("Conta [%d] ", i + 1);
+        printf("Produto [%d] ", i + 1);
         imprimirProduto(ptr_p);
     }
 }
