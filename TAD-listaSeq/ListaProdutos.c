@@ -67,7 +67,7 @@ void imprimir(ListaProdutos* ptr_lista){
         printf("Lista vazia ou inválida.\n");
         return;
     }
-    printf("Lista de Contas Bancárias:\n");
+    printf("Lista de Produtos:\n");
     for (int i = 0; i < ptr_lista->quantidade; i++) {
         Produto *ptr_p = (*ptr_lista).prods[i];
         printf("Conta [%d] ", i + 1);
