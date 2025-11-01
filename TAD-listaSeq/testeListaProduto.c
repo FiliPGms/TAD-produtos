@@ -14,17 +14,17 @@ int main(int argc, char *argv[]){
 
     printf("Teste de inserção de produtos na lista:\n");
     if (!teste_inserir()) {
-        printf("❌ Teste de inserção falhou.\n");
+        printf("Teste de inserção falhou.\n");
         return 1;
     }
-    printf("✅ Teste de inserção passou.\n\n");  
+    printf("Teste de inserção passou.\n\n");  
 
     printf("Teste de leitura de produtos de arquivo:\n");
     if (!teste_arquivo()) {
-        printf("❌ Teste de leitura de arquivo falhou.\n");
+        printf("Teste de leitura de arquivo falhou.\n");
         return 1;
     }
-    printf("✅ Teste de leitura de arquivo passou.\n");
+    printf("Teste de leitura de arquivo passou.\n");
 
     return 0;
 }   
@@ -76,9 +76,16 @@ int teste_inserir() {
 
     imprimir(ptr_lista);
 
-printf("\n--- Teste da função buscar() ---\n");
+    
+    printf("\n--- Teste da função aplicarDesconto() ---\n");
 
-int pos = buscar(ptr_lista, 2);
+    float novo_preco = aplicarDesconto(produto1, 0.10f);
+    printf("--------------------------\n");
+
+
+    printf("\n--- Teste da função buscar() ---\n");
+
+    int pos = buscar(ptr_lista, 2);
 if (pos != -1) {
     Produto* encontrado = getProduto(ptr_lista, pos);
     if (encontrado != NULL)

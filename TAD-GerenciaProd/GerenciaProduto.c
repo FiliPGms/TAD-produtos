@@ -27,7 +27,12 @@ Produto* criarProduto(const char* nome, const char* categoria, int codigo, float
 
 
 float aplicarDesconto(Produto* ptr_p, float percentual){
+    if (ptr_p == NULL) {
+        printf("Erro: produto inválido.\n");
+        return 0.0f;
+    }
     ptr_p->preco-=ptr_p->preco*percentual;
+    printf("Desconto aplicado ao produto %s. Novo preço: R$ %.2f\n", ptr_p->nome, ptr_p->preco);
     return ptr_p->preco;
 }
 

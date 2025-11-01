@@ -15,17 +15,17 @@ int main(void) {
 
     printf("Teste de inserção de produtos na lista:\n");
     if (!teste_inserir()) {
-        printf("❌ Teste de inserção falhou.\n");
+        printf("Teste de inserção falhou.\n");
         return 1;
     }
-    printf("✅ Teste de inserção passou.\n\n");
+    printf("Teste de inserção passou.\n\n");
 
     printf("Teste de leitura de produtos de arquivo:\n");
     if (!teste_arquivo()) {
-        printf("❌ Teste de leitura de arquivo falhou.\n");
+        printf("Teste de leitura de arquivo falhou.\n");
         return 1;
     }
-    printf("✅ Teste de leitura de arquivo passou.\n");
+    printf("Teste de leitura de arquivo passou.\n");
 
     return 0;
 }
