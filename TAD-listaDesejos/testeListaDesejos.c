@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include "../TAD-GerenciaProd/GerenciaProduto.h"
 #include "../TAD-listaDesejos/ListaDesejos.h"
+#include <locale.h>
 
 int ler_arquivo_produtos(const char* nome_arquivo, ListaDesejos* lista);
 int teste_inserir();
 int teste_arquivo();
 
 int main(void) {
+    setlocale(LC_ALL, "pt_BR.UTF-8");
+
     printf("Iniciando testes da Lista de Desejos...\n\n");
 
     printf("Teste de inserção de produtos na lista:\n");

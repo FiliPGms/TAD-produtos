@@ -1,0 +1,6 @@
+lista de produtos = gcc TAD-listaSeq/testeListaProdutos.c TAD-listaSeq/ListaProdutos.c TAD-GerenciaProd/GerenciaProduto.c -o testeListaProdutos -Wall
+para rodar = ./testeListaProdutos
+
+lista de desejos = gcc TAD-listaDesejos/testeListaDesejos.c TAD-listaDesejos/ListaDesejos.c TAD-listaSeq/ListaProdutos.c TAD-GerenciaProd/GerenciaProduto.c -o testeListaDesejos -Wall
+para rodar = ./testeListaDesejos
+

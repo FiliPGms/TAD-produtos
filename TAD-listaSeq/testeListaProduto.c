@@ -1,13 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "ListaProdutos.h"
+#include <locale.h>
 
 int ler_arquivo_produtos(const char* nome_arquivo, ListaProdutos* lista);
 int teste_inserir();
 int teste_arquivo();
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){   
+    setlocale(LC_ALL, "pt_BR.UTF-8");
+
     printf("Iniciando testes da Lista de Produtos...\n\n");
 
     printf("Teste de inserção de produtos na lista:\n");
