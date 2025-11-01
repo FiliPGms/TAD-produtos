@@ -3,7 +3,6 @@
 #include "ListaProdutos.h"
 
 int ler_arquivo_produtos(const char* nome_arquivo, ListaProdutos* lista);
-int teste_busca_e_remocao(const char* nome_arquivo, ListaProdutos* lista);
 int teste_inserir();
 int teste_arquivo();
 
@@ -75,7 +74,31 @@ int teste_inserir() {
 
     imprimir(ptr_lista);
 
-    // Tentativa de inserir além da capacidade
+printf("\n--- Teste da função buscar() ---\n");
+
+int pos = buscar(ptr_lista, 2);
+if (pos != -1) {
+    Produto* encontrado = getProduto(ptr_lista, pos);
+    if (encontrado != NULL)
+        printf("Produto com código 2 encontrado na posição %d. Nome: %s\n",
+               pos + 1, getNome(encontrado));
+    else
+        printf("Erro ao acessar produto na posição %d.\n", pos);
+    } 
+else {
+    printf("Produto com código 2 não encontrado.\n");
+}
+
+    printf("--------------------------\n");
+
+
+    printf("Removendo produto código 2 (Feijao)...\n");
+    remover(ptr_lista, 2);
+    imprimir(ptr_lista);
+
+    printf("Tamanho atual da lista: %d\n", tamanho(ptr_lista));
+    
+    //Teste de capacidade
     if (inserir(ptr_lista, produto3)) {
         printf("Falha: inseriu além da capacidade.\n");
         liberarLista(ptr_lista);
@@ -101,73 +124,5 @@ int teste_arquivo() {
 
     imprimir(ptr_lista);
     liberarLista(ptr_lista);
-    return 1;
-}
-
-int teste_busca_e_remocao(const char* nome_arquivo, ListaProdutos* lista) {
-    FILE* arquivo = fopen(nome_arquivo, "r");
-    ListaProdutos* ptr_lista = criaLista(5);
-    if (ptr_lista == NULL) {
-        printf("Erro: não foi possível criar a lista.\n");
-        return 0;
-    }
-
-    Produto* produto1 = criarProduto("Arroz", "Cereais", 1, 5.49, 50);
-    Produto* produto2 = criarProduto("Feijao", "Cereais", 2, 6.29, 40);
-    Produto* produto3 = criarProduto("Acucar", "Mercearia", 3, 4.99, 60);
-    
-    inserir(ptr_lista, produto1);
-    inserir(ptr_lista, produto2);
-    inserir(ptr_lista, produto3);
-
-    printf("--- Estado Inicial da Lista ---\n");
-    imprimir(ptr_lista);
-
-    printf("\n[Busca] Tentando buscar o produto com código 2...\n");
-    int pos_buscada = buscar(ptr_lista, 2);
-    if (pos_buscada == -1) {
-        printf("Falha na busca: Código 2 não encontrado.\n");
-
-        liberarLista(ptr_lista);
-        return 0;
-    }
-    printf("Sucesso na busca: Código 2 encontrado na posição %d.\n", pos_buscada);
-
-    printf("[Busca] Tentando buscar produto inexistente (código 3)...\n");
-    if (buscar(ptr_lista, 3) != -1) {
-        printf("Falha na busca: Encontrou um código que não existe (3).\n");
-        liberarLista(ptr_lista);
-        return 0;
-    }
-    printf("Sucesso na busca: Código 3 não encontrado (retornou -1).\n");
-
-    printf("\n[Remoção 1] Removendo produto do meio (Código 1 - Arroz)...\n");
-    if (!remover(ptr_lista, 1)) {
-        printf("Falha na remoção: Código 1 não removido.\n");
-        liberarLista(ptr_lista);
-        return 0;
-    }
-    printf("Sucesso na remoção: Código 1 removido. Nova lista:\n");
-    imprimir(ptr_lista); 
-
-    printf("\n[Remoção 2] Removendo último produto (Código 2 - Ovos)...\n");
-    if (!remover(ptr_lista, 40)) {
-        printf("Falha na remoção: Código 40 não removido.\n");
-        liberarLista(ptr_lista);
-        return 0;
-    }
-    printf("Sucesso na remoção: Código 40 removido. Nova lista:\n");
-    imprimir(ptr_lista); 
-    
-    printf("\n[Remoção 3] Tentando remover produto inexistente (código 99)...\n");
-    if (remover(ptr_lista, 99)) {
-        printf("Falha na remoção: Removeu um código que não existe (99).\n");
-        liberarLista(ptr_lista);
-        return 0;
-    }
-    printf("Sucesso na remoção: Código 99 não removido (retornou 0).\n");
-    
-    liberarLista(ptr_lista);
-    fclose(arquivo);
     return 1;
 }

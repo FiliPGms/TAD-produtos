@@ -123,4 +123,10 @@ int remover(ListaProdutos* ptr_lista, int codigo){
     return 0;
 }
 
+Produto* getProduto(ListaProdutos* lista, int pos) {
+    if (lista == NULL || pos < 0 || pos >= lista->quantidade)
+        return NULL;
+    return lista->prods[pos]; // <-- usa 'prods', não 'produtos'
+}
+
 

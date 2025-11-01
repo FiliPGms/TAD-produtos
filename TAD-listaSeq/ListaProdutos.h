@@ -12,12 +12,16 @@ int remover(ListaProdutos* ptr_lista, int codigo);
 int buscar(ListaProdutos* ptr_lista, int codigo);
 Produto* obter(ListaProdutos* ptr_lista, int codigo);
 
+
 int cheia(ListaProdutos* ptr_lista);
 int vazia(ListaProdutos* ptr_lista);
 int tamanho(ListaProdutos* ptr_lista);
 int capacidade(ListaProdutos* ptr_lista);
 
 void imprimir(ListaProdutos* ptr_lista);
+
+Produto* getProduto(ListaProdutos* lista, int pos);
+
 
 
 #endif
